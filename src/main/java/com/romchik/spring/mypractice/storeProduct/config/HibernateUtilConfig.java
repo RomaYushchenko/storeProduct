@@ -24,7 +24,7 @@ public class HibernateUtilConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.a.testSpringBootHib.entity");
+        sessionFactory.setPackagesToScan("com.romchik.spring.mypractice.storeProduct.model.entity");
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
@@ -34,7 +34,7 @@ public class HibernateUtilConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/adventureworks");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/romaentertainment");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
 
