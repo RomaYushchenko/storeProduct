@@ -13,7 +13,7 @@ public interface SaleService {
 
     Sale addSale(Sale sale);
 
-    Sale update(Sale sale);
+    Sale updateSale(Sale sale);
 
     boolean removeSale(int idSale);
 
