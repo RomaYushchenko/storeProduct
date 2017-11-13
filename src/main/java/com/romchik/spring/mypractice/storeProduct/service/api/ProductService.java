@@ -15,5 +15,4 @@ public interface ProductService {
     boolean removeProduct(int idProduct);
 
     Product findProduct(int idProduct);
-
 }

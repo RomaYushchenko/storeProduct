@@ -5,20 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="product")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = -3465813074586302847L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @Column(name = "productNumber")
-    private int namber;
 
     @Column(name = "name")
     private String name;
@@ -29,9 +29,4 @@ public class Product {
     @Column(name = "weight")
     private int weight;
 
-    @Column(name = "productLine")
-    private String line;
-
-    @Column(name = "productClass")
-    private String productClass;
 }

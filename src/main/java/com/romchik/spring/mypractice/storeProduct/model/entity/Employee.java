@@ -5,13 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="employee")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
+public class Employee implements Serializable {
+
+    private static final long serialVersionUID = -3465813074586302847L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,10 +28,4 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
-
-    @Column(name = "firstName")
-    private String firstName;
-
-    @Column(name = "lastname")
-    private String lastName;
 }

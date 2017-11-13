@@ -4,9 +4,6 @@ import com.romchik.spring.mypractice.storeProduct.model.entity.Sale;
 
 import java.util.List;
 
-/**
- * @author roman.yushchenko
- */
 public interface SaleService {
 
     List<Sale> findAllSale();

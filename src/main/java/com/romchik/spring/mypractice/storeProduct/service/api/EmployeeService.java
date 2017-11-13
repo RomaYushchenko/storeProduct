@@ -5,7 +5,6 @@ import com.romchik.spring.mypractice.storeProduct.model.entity.Employee;
 import java.util.List;
 
 public interface EmployeeService {
-
     List<Employee> findAllEmployee();
 
     Employee addEmployee(Employee employee);
