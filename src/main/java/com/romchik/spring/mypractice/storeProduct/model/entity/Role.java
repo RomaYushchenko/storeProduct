@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
-@Table(name="sale")
+@Table(name="role")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sale implements Serializable {
+public class Role implements Serializable {
 
     private static final long serialVersionUID = -3465813074586302847L;
 
@@ -21,18 +20,6 @@ public class Sale implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-    @Column(name = "price")
-    private double price;
-
-    @OneToOne
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "sales")
-    private Date sales;
+    @Column(name="name")
+    private String role;
 }
