@@ -16,5 +16,5 @@ public interface EmployeeService {
 
     Employee findEmployee(int idEmployee);
 
-    Employee findEmployeeByEmail(String email);
+    String findEmployeeByRoleEmployee(String login);
 }

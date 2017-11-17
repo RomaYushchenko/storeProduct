@@ -84,7 +84,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee findEmployeeByEmail(String email) {
-        return employeeRepository.findByEmail(email);
+    public String findEmployeeByRoleEmployee(String login) {
+        return employeeRepository.findByRoleEmployee(login);
     }
 }
