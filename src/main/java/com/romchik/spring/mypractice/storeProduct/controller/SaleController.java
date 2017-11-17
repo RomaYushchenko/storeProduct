@@ -1,6 +1,7 @@
 package com.romchik.spring.mypractice.storeProduct.controller;
 
 import com.romchik.spring.mypractice.storeProduct.model.entity.Employee;
+import com.romchik.spring.mypractice.storeProduct.model.entity.Product;
 import com.romchik.spring.mypractice.storeProduct.model.entity.Sale;
 import com.romchik.spring.mypractice.storeProduct.service.api.EmployeeService;
 import com.romchik.spring.mypractice.storeProduct.service.api.SaleService;
@@ -66,8 +67,21 @@ public class SaleController {
     public boolean removeSale(@PathVariable("idSale") int idSale, Authentication authentication){
         String employeeRole = employeeService.findEmployeeByRoleEmployee(authentication.getName());
 
-        if(employeeRole != null && employeeRole.equals("ADMIN")) {
+        if (employeeRole != null && employeeRole.equals("ADMIN"))
             return saleService.removeSale(idSale);
+        else {
+            if (employeeRole.equals("USER")) {
+                Sale sale = saleService.findSale(idSale);
+                Employee employee = employeeService.findEmployee(Integer.parseInt(employeeService.findEmployeeByIdEmployee(authentication.getName())));
+                List<Sale> sales = saleService.findAllSale();
+
+                for (Sale counterSale : sales) {
+                    if (saleService.findSale(counterSale.getId()).getId() == sale.getId()
+                            && saleService.findSale(counterSale.getId()).getEmployee().getId() == employee.getId()) {
+                        return saleService.removeSale(idSale);
+                    }
+                }
+            }
         }
 
         return false;
