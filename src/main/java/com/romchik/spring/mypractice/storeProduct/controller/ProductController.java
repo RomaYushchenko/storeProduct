@@ -1,8 +1,6 @@
 package com.romchik.spring.mypractice.storeProduct.controller;
 
-import com.romchik.spring.mypractice.storeProduct.model.entity.Employee;
 import com.romchik.spring.mypractice.storeProduct.model.entity.Product;
-import com.romchik.spring.mypractice.storeProduct.model.entity.Sale;
 import com.romchik.spring.mypractice.storeProduct.service.api.EmployeeService;
 import com.romchik.spring.mypractice.storeProduct.service.api.ProductService;
 import com.romchik.spring.mypractice.storeProduct.service.api.SaleService;
