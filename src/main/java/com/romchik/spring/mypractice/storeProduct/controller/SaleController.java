@@ -21,10 +21,9 @@ import java.util.stream.Collectors;
 @RestController
 public class SaleController {
 
-    public static final Logger logger = LoggerFactory.getLogger(SaleController.class);
-
     @Autowired
     SaleService saleService;
+
     @Autowired
     EmployeeService employeeService;
 
